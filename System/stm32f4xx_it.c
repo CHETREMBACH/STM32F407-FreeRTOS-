@@ -95,6 +95,7 @@ void DebugMon_Handler(void)
   */
 void SysTick_Handler(void)
 {
+  HAL_IncTick();	
 #if (INCLUDE_xTaskGetSchedulerState == 1 )
   if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
   {
@@ -111,6 +112,5 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32f4xx.s).                    */
 /******************************************************************************/
-
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -13,6 +13,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "lwip.h"
 #include "printf_dbg.h"
 #include "cmd_process.h"
 
@@ -39,6 +40,9 @@ void system_thread(void *arg)
 	//Подключение интерфейса отладки
 	DBG_Hardware_Setup();
 
+	/* init code for LWIP */
+	LWIP_Init();	
+	
 	//Инициализация задачи диагностического терминала 
 	xTaskCreate(terminal_task, (const char*)"CmdTrmnl", configMINIMAL_STACK_SIZE * 2, NULL, TreadPrioNormal, NULL);
 	
@@ -48,7 +52,7 @@ void system_thread(void *arg)
 	printf("   %s \r\n", __version__);
 	printf("   DATA: %s \r\n", __date__);
 	printf("   TIME: %s \r\n", __time__);
-	//printf("   CPU FREQ = %.9d Hz \r\n", SystemCoreClock);  
+	printf("   CPU FREQ = %.9lu Hz \r\n", SystemCoreClock);  
 	printf("______________________________________________\r\n"); 
   
 	for (;;)

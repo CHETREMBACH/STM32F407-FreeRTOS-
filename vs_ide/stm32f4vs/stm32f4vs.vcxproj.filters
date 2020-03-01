@@ -94,6 +94,78 @@
     <Filter Include="stm32f4_vs\Utilities\cmd_trmnl">
       <UniqueIdentifier>{50b3d9cf-d802-4867-ae3f-831ba226948e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP">
+      <UniqueIdentifier>{078e3024-6c05-44ff-8159-6d55cc239f24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src">
+      <UniqueIdentifier>{e12fb67e-2ae8-40aa-90a2-ad13ba06a027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\api">
+      <UniqueIdentifier>{85d304e5-e321-4c41-9231-d4f8ac5180ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\apps">
+      <UniqueIdentifier>{ed6bdb5d-4d1a-473f-ad96-7c154263b2a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\core">
+      <UniqueIdentifier>{c27383a0-9829-4b40-a43e-e0a098756bf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\core\ipv4">
+      <UniqueIdentifier>{4ad791c8-61b2-4832-98a1-4276894be778}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include">
+      <UniqueIdentifier>{163812a3-b287-4b40-82d1-8153fe8b1f52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include\compat">
+      <UniqueIdentifier>{e34b9d0a-930e-40a0-97c8-9be2360e9c92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include\compat\posix">
+      <UniqueIdentifier>{444591dc-ee38-4579-92e9-2ca134f87189}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include\compat\posix\arpa">
+      <UniqueIdentifier>{a380885b-e2cb-4339-9486-ce9cb31c4381}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include\compat\posix\net">
+      <UniqueIdentifier>{e3daa028-d518-43b9-b80b-880ca971eb44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include\compat\posix\sys">
+      <UniqueIdentifier>{78150ebd-b3a7-405d-9d58-03f5ed39a861}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include\compat\stdc">
+      <UniqueIdentifier>{39f407ff-c875-4d87-97f7-faf18ff6e42b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include\lwip">
+      <UniqueIdentifier>{ed8b04fb-cf8d-4b43-b331-29291eec9c10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include\lwip\apps">
+      <UniqueIdentifier>{5b9f9b28-54cc-489b-9b0c-017dc7aee4b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include\lwip\priv">
+      <UniqueIdentifier>{fe3d13eb-a7d6-4a36-aa74-5fd13b83bb9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include\lwip\prot">
+      <UniqueIdentifier>{1ebdec36-2b26-489f-bd3d-2b465a4c7752}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include\netif">
+      <UniqueIdentifier>{cdbf17b3-fdec-4efc-930c-1037405451a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\include\netif\ppp">
+      <UniqueIdentifier>{a5ffca0a-940d-46ab-9bf8-1756dee6c9e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP\src\netif">
+      <UniqueIdentifier>{1f8505e7-4289-4352-8eba-1f4fb22e1153}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP_port_FreeRTOS">
+      <UniqueIdentifier>{9bccf58c-a690-42e5-b780-9f84058b8a59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP_port_FreeRTOS\include">
+      <UniqueIdentifier>{32a61a2b-ada1-470e-85a5-0307ab5a98b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Libraries\LwIP_port_FreeRTOS\include\arch">
+      <UniqueIdentifier>{424e77bb-6575-471d-a40b-a2ddd09f8852}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Utilities\lwip_drv">
+      <UniqueIdentifier>{e0783455-8608-4e15-a6bf-57a6b50a08b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="stm32f4vs-Debug.vgdbsettings">
@@ -594,6 +666,570 @@
     <ClInclude Include="..\..\System\stm32f4xx_it.h">
       <Filter>stm32f4_vs\System</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Libraries\LwIP\src\api\api_lib.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\api\api_msg.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\api\err.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\api\netbuf.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\api\netdb.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\api\netifapi.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\api\sockets.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\api\tcpip.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\altcp.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\altcp_alloc.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\altcp_tcp.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\def.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\dns.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\inet_chksum.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\init.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\ip.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\mem.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\memp.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\netif.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\pbuf.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\raw.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\stats.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\sys.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\tcp.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\tcp_in.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\tcp_out.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\timeouts.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\udp.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\ipv4\autoip.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\ipv4\dhcp.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\ipv4\etharp.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\ipv4\icmp.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\ipv4\igmp.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\ipv4\ip4.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\ipv4\ip4_addr.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\core\ipv4\ip4_frag.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP\src\netif\ethernet.c">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\netif</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\compat\posix\netdb.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\compat\posix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\compat\posix\arpa\inet.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\compat\posix\arpa</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\compat\posix\net\if.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\compat\posix\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\compat\posix\sys\socket.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\compat\posix\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\compat\stdc\errno.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\compat\stdc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\altcp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\altcp_tcp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\altcp_tls.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\api.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\arch.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\autoip.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\debug.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\def.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\dhcp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\dhcp6.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\dns.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\err.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\errno.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\etharp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\ethip6.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\icmp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\icmp6.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\if_api.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\igmp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\inet.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\inet_chksum.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\init.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\ip.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\ip4.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\ip4_addr.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\ip4_frag.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\ip6.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\ip6_addr.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\ip6_frag.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\ip6_zone.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\ip_addr.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\mem.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\memp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\mld6.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\nd6.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\netbuf.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\netdb.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\netif.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\netifapi.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\opt.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\pbuf.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\raw.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\sio.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\snmp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\sockets.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\stats.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\sys.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\tcp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\tcpbase.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\tcpip.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\timeouts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\udp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\altcp_proxyconnect.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\altcp_tls_mbedtls_opts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\fs.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\httpd.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\httpd_opts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\http_client.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\lwiperf.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\mdns.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\mdns_opts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\mdns_priv.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\mqtt.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\mqtt_opts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\mqtt_priv.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\netbiosns.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\netbiosns_opts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\smtp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\smtp_opts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\snmp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\snmpv3.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\snmp_core.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\snmp_mib2.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\snmp_opts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\snmp_scalar.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\snmp_snmpv2_framework.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\snmp_snmpv2_usm.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\snmp_table.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\snmp_threadsync.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\sntp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\sntp_opts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\tftp_opts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\apps\tftp_server.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\apps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\priv\altcp_priv.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\priv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\priv\api_msg.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\priv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\priv\memp_priv.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\priv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\priv\memp_std.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\priv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\priv\mem_priv.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\priv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\priv\nd6_priv.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\priv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\priv\raw_priv.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\priv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\priv\sockets_priv.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\priv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\priv\tcpip_priv.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\priv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\priv\tcp_priv.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\priv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\autoip.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\dhcp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\dhcp6.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\dns.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\etharp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\ethernet.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\iana.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\icmp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\icmp6.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\ieee.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\igmp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\ip.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\ip4.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\ip6.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\mld6.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\nd6.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\tcp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\lwip\prot\udp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\lwip\prot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\bridgeif.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\bridgeif_opts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\etharp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ethernet.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ieee802154.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\lowpan6.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\lowpan6_ble.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\lowpan6_common.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\lowpan6_opts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\slipif.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\zepif.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\ccp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\chap-md5.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\chap-new.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\chap_ms.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\eap.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\ecp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\eui64.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\fsm.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\ipcp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\ipv6cp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\lcp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\magic.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\mppe.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\ppp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\pppapi.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\pppcrypt.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\pppdebug.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\pppoe.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\pppol2tp.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\pppos.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\ppp_impl.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\ppp_opts.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\upap.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\vj.h">
+      <Filter>stm32f4_vs\Libraries\LwIP\src\include\netif\ppp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\gcc\startup_stm32f407xx.s">
@@ -623,6 +1259,18 @@
     <ClCompile Include="..\..\Utilities\cmd_trmnl\cmd_process.c">
       <Filter>stm32f4_vs\Utilities\cmd_trmnl</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_eth.c">
+      <Filter>stm32f4_vs\Libraries\STM32F4xx_HAL_Driver\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Utilities\lwip_drv\ethernetif.c">
+      <Filter>stm32f4_vs\Utilities\lwip_drv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Utilities\lwip_drv\lwip.c">
+      <Filter>stm32f4_vs\Utilities\lwip_drv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\LwIP_port_FreeRTOS\sys_arch.c">
+      <Filter>stm32f4_vs\Libraries\LwIP_port_FreeRTOS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <LinkerScript Include="..\..\Config\STM32F407VE_flash.lds">
@@ -647,6 +1295,39 @@
     </ClInclude>
     <ClInclude Include="..\..\Utilities\cmd_trmnl\cmd_process.h">
       <Filter>stm32f4_vs\Utilities\cmd_trmnl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP_port_FreeRTOS\include\arch\bpstruct.h">
+      <Filter>stm32f4_vs\Libraries\LwIP_port_FreeRTOS\include\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP_port_FreeRTOS\include\arch\cc.h">
+      <Filter>stm32f4_vs\Libraries\LwIP_port_FreeRTOS\include\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP_port_FreeRTOS\include\arch\cpu.h">
+      <Filter>stm32f4_vs\Libraries\LwIP_port_FreeRTOS\include\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP_port_FreeRTOS\include\arch\epstruct.h">
+      <Filter>stm32f4_vs\Libraries\LwIP_port_FreeRTOS\include\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP_port_FreeRTOS\include\arch\init.h">
+      <Filter>stm32f4_vs\Libraries\LwIP_port_FreeRTOS\include\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP_port_FreeRTOS\include\arch\lib.h">
+      <Filter>stm32f4_vs\Libraries\LwIP_port_FreeRTOS\include\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP_port_FreeRTOS\include\arch\perf.h">
+      <Filter>stm32f4_vs\Libraries\LwIP_port_FreeRTOS\include\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\LwIP_port_FreeRTOS\include\arch\sys_arch.h">
+      <Filter>stm32f4_vs\Libraries\LwIP_port_FreeRTOS\include\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Utilities\lwip_drv\ethernetif.h">
+      <Filter>stm32f4_vs\Utilities\lwip_drv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Utilities\lwip_drv\lwip.h">
+      <Filter>stm32f4_vs\Utilities\lwip_drv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Utilities\lwip_drv\lwipopts.h">
+      <Filter>stm32f4_vs\Utilities\lwip_drv</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
