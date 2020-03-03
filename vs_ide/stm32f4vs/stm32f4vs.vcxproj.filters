@@ -207,9 +207,6 @@
     <ClInclude Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h">
       <Filter>stm32f4_vs\Libraries\CMSIS\Device\ST\STM32F4xx\Include</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c">
-      <Filter>stm32f4_vs\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates</Filter>
-    </ClCompile>
     <ClInclude Include="..\..\Libraries\CMSIS\Include\cmsis_compiler.h">
       <Filter>stm32f4_vs\Libraries\CMSIS\Include</Filter>
     </ClInclude>
@@ -1270,6 +1267,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Libraries\LwIP_port_FreeRTOS\sys_arch.c">
       <Filter>stm32f4_vs\Libraries\LwIP_port_FreeRTOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c">
+      <Filter>stm32f4_vs\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

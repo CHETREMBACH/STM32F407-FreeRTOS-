@@ -43,7 +43,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
       <AdditionalIncludeDirectories>../../Config;../../Libraries/CMSIS/Core/Include;../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../Libraries/CMSIS/Include;../../Libraries/FreeRTOS/Source/include;../../Libraries/FreeRTOS/Source/portable/GCC/ARM_CM4F;../../Libraries/STM32F4xx_HAL_Driver/Inc;../../Libraries/STM32F4xx_HAL_Driver/Inc/Legacy;../../System;../../Utilities\cmd_trmnl;../../Utilities\uart_dbg;../../Libraries/LwIP_port_FreeRTOS/include;../../Libraries/LwIP/src/include;../../Utilities/lwip_drv;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>flash_layout;STM32F407xx;USE_FREERTOS;DBG_UART_ENABLE=1;DEBUG=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>flash_layout;STM32F407xx;HSE_VALUE=8000000;USE_FREERTOS;DBG_UART_ENABLE=1;DEBUG=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CLanguageStandard>C17</CLanguageStandard>
       <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
@@ -81,6 +81,7 @@
     <None Include="stm32.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c" />
     <ClCompile Include="..\..\Libraries\LwIP_port_FreeRTOS\sys_arch.c" />
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_eth.c" />
     <ClCompile Include="..\..\Utilities\cmd_trmnl\cmd_freertos_cntrl.c" />
@@ -119,7 +120,6 @@
     <ClInclude Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h" />
     <ClInclude Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h" />
     <ClCompile Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\gcc\startup_stm32f407xx.s" />
-    <ClCompile Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c" />
     <ClInclude Include="..\..\Libraries\CMSIS\Include\cmsis_compiler.h" />
     <ClInclude Include="..\..\Libraries\CMSIS\Include\cmsis_gcc.h" />
     <ClInclude Include="..\..\Libraries\CMSIS\Include\cmsis_version.h" />
