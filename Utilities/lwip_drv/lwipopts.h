@@ -46,6 +46,9 @@
 	 
 #define LwIP_THREAD_PRIO       TreadPrioAboveNormal	 
 	 
+/* LWIP_NETIF_LINK_CALLBACK==1: Support a callback function from an interface */
+#define LWIP_NETIF_LINK_CALLBACK 1
+
 /*----- CHECKSUM_BY_HARDWARE disabled -----*/
 #define CHECKSUM_BY_HARDWARE 0
 /*-----------------------------------------------------------------------------*/
