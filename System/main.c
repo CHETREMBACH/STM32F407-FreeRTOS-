@@ -17,10 +17,18 @@
 #include "printf_dbg.h"
 #include "cmd_process.h"
 
+#include "w25qx.h"
+#include "conf_w25qx.h"
+#include "spi_w25qx_ll.h" 
+
+
 // Формирование кода версии
 volatile const char __version__[] = "BOARD STM32F07VE";    
 volatile const char __date__[] = __DATE__;
 volatile const char __time__[] = __TIME__;
+
+volatile __IO uint32_t *CYCCNT = (__IO uint32_t *)0xE0001004;  // Cycle Count Register
+volatile __IO uint32_t *CNTRL = (__IO uint32_t *)0xE0001000;  // Control Register
 
 /* Private includes ----------------------------------------------------------*/
 /* Private typedef -----------------------------------------------------------*/
@@ -37,6 +45,9 @@ volatile const char __time__[] = __TIME__;
  */
 void system_thread(void *arg)
 { 
+     GPIO_InitTypeDef GPIO_InitStruct;
+     uint32_t time_temp;
+
 	//Подключение интерфейса отладки
 	DBG_Hardware_Setup();
 
@@ -44,8 +55,26 @@ void system_thread(void *arg)
 	LWIP_Init();	
 	
 	//Инициализация задачи диагностического терминала 
-	xTaskCreate(terminal_task, (const char*)"CmdTrmnl", configMINIMAL_STACK_SIZE * 2, NULL, TreadPrioNormal, NULL);
+	xTaskCreate(terminal_task, (const char*)"CmdTrmnl", configMINIMAL_STACK_SIZE * 5, NULL, TreadPrioNormal, NULL);
 	
+     //Инициализация выводов тест
+     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+     GPIO_InitStruct.Pull = GPIO_PULLUP;
+     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+
+     T1_GPIO_CLK_ENABLE();
+     GPIO_InitStruct.Pin = T1_PIN;
+     HAL_GPIO_Init(T1_GPIO_PORT, &GPIO_InitStruct);
+     T1_HI;
+
+     T2_GPIO_CLK_ENABLE();
+     GPIO_InitStruct.Pin = T2_PIN;
+     HAL_GPIO_Init(T2_GPIO_PORT, &GPIO_InitStruct);
+     T2_HI;
+     //Инициализация циклического счетчика 
+     init_cyc_tick();
+
+
 	// Информационная шапка программы
 	printf("______________________________________________\r\n");
 	printf("\r\n");
@@ -55,11 +84,11 @@ void system_thread(void *arg)
 	printf("   CPU FREQ = %.9lu Hz \r\n", SystemCoreClock);  
 	printf("______________________________________________\r\n"); 
   
-	for (;;)
-	{
-		vTaskDelay(500); 
-		vTaskDelay(500);    
-	}
+    W25qxx_Init();
+	
+    for (;;) {
+      vTaskDelay(500);
+    }
 }
 
 /**

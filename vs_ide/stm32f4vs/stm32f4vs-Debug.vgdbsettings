@@ -39,6 +39,14 @@
     <PostDebugActions />
     <DebugStopActions />
     <BreakMode>Default</BreakMode>
+    <CustomBreakCommand>
+      <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
+      <RemoteHost>
+        <HostName>BuildMachine</HostName>
+        <Transport>BuiltinShortcut</Transport>
+      </RemoteHost>
+      <BackgroundMode xsi:nil="true" />
+    </CustomBreakCommand>
   </CustomDebug>
   <CustomShortcuts>
     <Shortcuts />
@@ -47,10 +55,16 @@
   <UserDefinedVariables />
   <ImportedPropertySheets />
   <CodeSense>
-    <Enabled>Unknown</Enabled>
+    <Enabled>True</Enabled>
     <ExtraSettings>
       <HideErrorsInSystemHeaders>true</HideErrorsInSystemHeaders>
       <SupportLightweightReferenceAnalysis>true</SupportLightweightReferenceAnalysis>
+      <DiscoverySettings>
+        <Mode>Silent</Mode>
+        <SearchInProjectDir>true</SearchInProjectDir>
+        <SearchInSourceDirs>true</SearchInSourceDirs>
+        <SearchInIncludeSubdirs>true</SearchInIncludeSubdirs>
+      </DiscoverySettings>
       <CheckForClangFormatFiles>true</CheckForClangFormatFiles>
       <FormattingEngine xsi:nil="true" />
     </ExtraSettings>
@@ -147,20 +161,16 @@
         <ExplicitEndOfFLASH>0</ExplicitEndOfFLASH>
         <ExplicitEndOfRAM>0</ExplicitEndOfRAM>
       </InstrumentedFunctions>
-      <RTOSFeatures>
-        <RTOSFeatureSetting>
-          <FeatureID>com.sysprogs.analysis.thread.timing</FeatureID>
-          <Enabled>true</Enabled>
-        </RTOSFeatureSetting>
-        <RTOSFeatureSetting>
-          <FeatureID>com.sysprogs.analysis.freertos.queues</FeatureID>
-          <Enabled>true</Enabled>
-        </RTOSFeatureSetting>
-      </RTOSFeatures>
     </DynamicAnalysisSettings>
     <EndOfStackSymbol>_estack</EndOfStackSymbol>
     <TimestampProviderTicksPerSecond>0</TimestampProviderTicksPerSecond>
     <KeepConsoleAfterExit>false</KeepConsoleAfterExit>
+    <CodeCoverage>
+      <EnableLiveCoverage>false</EnableLiveCoverage>
+      <CreateCoverageReports>false</CreateCoverageReports>
+      <UpdateInterval>500</UpdateInterval>
+      <CoverageReportDirectory>$(ProjectDir)\CoverageReports</CoverageReportDirectory>
+    </CodeCoverage>
     <CheckInterfaceDrivers>true</CheckInterfaceDrivers>
   </Debug>
 </VisualGDBProjectSettings2>

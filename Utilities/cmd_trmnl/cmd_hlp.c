@@ -100,7 +100,7 @@ const cmd_t help_cmd =
   /* имя ( мнемомика ) команды        */  
   "help",
   /* тип параметра команды            */
-  VR_STRING,
+    VR_STRING, VR_NONE, VR_NONE, VR_NONE, VR_NONE,
   /* краткое описание команды         */
   "the command is intended for output to the help terminal",
   /* расширенное описание команды     */

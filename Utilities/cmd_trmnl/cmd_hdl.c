@@ -48,7 +48,7 @@ const cmd_t reset_cmd =
   /* имя ( мнемомика ) команды        */   
   "reset",
   /* тип параметра команды            */
-  VR_NONE,
+    VR_NONE, VR_NONE, VR_NONE, VR_NONE, VR_NONE,
   /* краткое описание команды         */
   "controller restart command",
   /* расширенное описание команды     */ 
@@ -101,7 +101,7 @@ const cmd_t led_cmd =
   /* имя ( мнемомика ) команды        */   
   "led",
   /* тип параметра команды            */
-  VR_STRING,
+    VR_STRING, VR_NONE, VR_NONE, VR_NONE, VR_NONE,
   /* краткое описание команды         */
   "LED control command",
   /* расширенное описание команды     */ 

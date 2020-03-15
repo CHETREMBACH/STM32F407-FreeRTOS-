@@ -35,7 +35,31 @@ extern "C" {
 #include "queue.h"
 #include "semphr.h"
 #include "event_groups.h"	
-	
+    
+#define T1_PIN GPIO_PIN_8
+#define T1_GPIO_PORT GPIOD
+#define T1_GPIO_CLK_ENABLE() __HAL_RCC_GPIOD_CLK_ENABLE()
+#define T1_HI T1_GPIO_PORT->BSRR =T1_PIN
+#define T1_LO T1_GPIO_PORT->BSRR = ((uint32_t)T1_PIN) << 16U
+#define T1_TG T1_GPIO_PORT->ODR ^= T1_PIN
+
+#define T2_PIN GPIO_PIN_9
+#define T2_GPIO_PORT GPIOD
+#define T2_GPIO_CLK_ENABLE() __HAL_RCC_GPIOD_CLK_ENABLE()
+#define T2_HI T2_GPIO_PORT->BSRR =T2_PIN
+#define T2_LO T2_GPIO_PORT->BSRR = ((uint32_t)T2_PIN) << 16U
+#define T2_TG T2_GPIO_PORT->ODR ^= T2_PIN
+
+extern __IO uint32_t *CYCCNT; // Cycle Count Register
+extern __IO uint32_t *CNTRL;  // Control Register
+
+static __INLINE void init_cyc_tick(void) {
+  *CYCCNT = 0;
+  *CNTRL = *CNTRL | 1;
+}
+static __INLINE uint32_t cyc_tick(void) { return DWT->CYCCNT; }
+
+
 /* Private includes ----------------------------------------------------------*/
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
@@ -53,6 +77,7 @@ typedef enum {
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
+
 
 #ifdef __cplusplus
 }

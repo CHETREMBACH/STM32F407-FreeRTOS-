@@ -42,11 +42,11 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../../Config;../../Libraries/CMSIS/Core/Include;../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../Libraries/CMSIS/Include;../../Libraries/FreeRTOS/Source/include;../../Libraries/FreeRTOS/Source/portable/GCC/ARM_CM4F;../../Libraries/STM32F4xx_HAL_Driver/Inc;../../Libraries/STM32F4xx_HAL_Driver/Inc/Legacy;../../System;../../Utilities\cmd_trmnl;../../Utilities\uart_dbg;../../Libraries/LwIP_port_FreeRTOS/include;../../Libraries/LwIP/src/include;../../Utilities/lwip_drv;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>flash_layout;STM32F407xx;HSE_VALUE=8000000;USE_FREERTOS;DBG_UART_ENABLE=1;DEBUG=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../Config;../../Libraries/CMSIS/Core/Include;../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../Libraries/CMSIS/Include;../../Libraries/FreeRTOS/Source/include;../../Libraries/FreeRTOS/Source/portable/GCC/ARM_CM4F;../../Libraries/STM32F4xx_HAL_Driver/Inc;../../Libraries/STM32F4xx_HAL_Driver/Inc/Legacy;../../System;../../Utilities\cmd_trmnl;../../Utilities\uart_dbg;../../Utilities\w25q128_drv;../../Libraries/LwIP_port_FreeRTOS/include;../../Libraries/LwIP/src/include;../../Utilities/lwip_drv;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>flash_layout;STM32F407xx;HSE_VALUE=8000000;USE_FREERTOS;DBG_UART_ENABLE=1;DEBUG=1;USE_FULL_LL_DRIVER;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
-      <CLanguageStandard>C17</CLanguageStandard>
-      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+      <CLanguageStandard>C11</CLanguageStandard>
+      <CPPLanguageStandard>CPP14</CPPLanguageStandard>
     </ClCompile>
     <Link>
       <LibrarySearchDirectories>%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
@@ -83,7 +83,11 @@
   <ItemGroup>
     <ClCompile Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c" />
     <ClCompile Include="..\..\Libraries\LwIP_port_FreeRTOS\sys_arch.c" />
+    <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c" />
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_eth.c" />
+    <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c" />
+    <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_dma.c" />
+    <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_spi.c" />
     <ClCompile Include="..\..\Utilities\cmd_trmnl\cmd_freertos_cntrl.c" />
     <ClCompile Include="..\..\Utilities\cmd_trmnl\cmd_hdl.c" />
     <ClCompile Include="..\..\Utilities\cmd_trmnl\cmd_hlp.c" />
@@ -92,6 +96,9 @@
     <ClCompile Include="..\..\Utilities\lwip_drv\lwip.c" />
     <ClCompile Include="..\..\Utilities\uart_dbg\printf_dbg.c" />
     <ClCompile Include="..\..\Utilities\uart_dbg\uart_dbg.c" />
+    <ClCompile Include="..\..\Utilities\w25q128_drv\spi_w25qx_ll.c" />
+    <ClCompile Include="..\..\Utilities\w25q128_drv\w25qx.c" />
+    <ClCompile Include="..\..\Utilities\w25q128_drv\w25qx_test.c" />
     <ClInclude Include="..\..\Config\FreeRTOSConfig.h" />
     <ClInclude Include="..\..\Config\stm32f4xx_hal_conf.h" />
     <ClInclude Include="..\..\Libraries\LwIP_port_FreeRTOS\include\arch\bpstruct.h" />
@@ -111,6 +118,10 @@
     <ClInclude Include="..\..\Utilities\lwip_drv\lwipopts.h" />
     <ClInclude Include="..\..\Utilities\uart_dbg\printf_dbg.h" />
     <ClInclude Include="..\..\Utilities\uart_dbg\uart_dbg.h" />
+    <ClInclude Include="..\..\Utilities\w25q128_drv\conf_w25qx.h" />
+    <ClInclude Include="..\..\Utilities\w25q128_drv\spi_w25qx_ll.h" />
+    <ClInclude Include="..\..\Utilities\w25q128_drv\w25qx.h" />
+    <ClInclude Include="..\..\Utilities\w25q128_drv\w25qx_test.h" />
     <None Include="..\..\Libraries\CMSIS\LICENSE.txt" />
     <ClInclude Include="..\..\Libraries\CMSIS\Core\Include\cmsis_compiler.h" />
     <ClInclude Include="..\..\Libraries\CMSIS\Core\Include\cmsis_gcc.h" />
@@ -119,7 +130,6 @@
     <ClInclude Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h" />
     <ClInclude Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h" />
     <ClInclude Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h" />
-    <ClCompile Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\gcc\startup_stm32f407xx.s" />
     <ClInclude Include="..\..\Libraries\CMSIS\Include\cmsis_compiler.h" />
     <ClInclude Include="..\..\Libraries\CMSIS\Include\cmsis_gcc.h" />
     <ClInclude Include="..\..\Libraries\CMSIS\Include\cmsis_version.h" />
@@ -462,6 +472,8 @@
     <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\ppp_opts.h" />
     <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\upap.h" />
     <ClInclude Include="..\..\Libraries\LwIP\src\include\netif\ppp\vj.h" />
+    <None Include="stm32.props" />
+    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\StartupFiles\startup_stm32f407xx.c" />
   </ItemGroup>
   <ItemGroup>
     <LinkerScript Include="..\..\Config\STM32F407VE_flash.lds" />

@@ -29,12 +29,23 @@ extern "C" {
 #include <stdbool.h>
 #include "main.h"
   
-#define MAX_SIZE_PARAM   (30)
-#define MAX_SIZE_CMD     (30)
+#define MAX_PARAM        (5)
+#define MAX_SIZE_DATA    (30)
+/* Максимальное число возможных зарегистрированных команд */
+#define MAX_SIZE_NUM_CMD (20)  
   
-/* Включение отладочной информации по обработке команд */
-//#define  DBG_PRCS_EN         
-#define  DBG_ERR_PRCS_EN     
+/* перечисление для автомата состояний */
+typedef enum { FIND_CMD = 0, PRC_CMD, FIND_PRM, PRC_PRM } fsm_dat_prc_e;
+
+/* перечисление для статуса команды */
+typedef enum {
+  STAT_NORM = 0,
+  STAT_INCORRECT_PARAM,
+  STAT_OVERFLOW,
+  STAT_DATA_IS_EMPTY,
+  STAT_CMD_NOT_LOADED,
+  STAT_INCORRECT_CMD
+}stat_cmd_e;
 
 /* перечисление для типа параметра команды */
 typedef enum
@@ -57,6 +68,7 @@ typedef enum
 /* тип переменной/параметра для функции обработчика */
 typedef struct
 {
+  bool flag_def;
   union
   {
     uint8_t   var_u08;
@@ -66,7 +78,7 @@ typedef struct
     uint32_t  var_u32;
     int32_t   var_i32;
     double    var_dbl;
-    char      var_ch[MAX_SIZE_PARAM];
+    char var_ch[MAX_SIZE_DATA];
   };
 }cmd_parametr_t;
 
@@ -74,16 +86,13 @@ typedef struct
 typedef struct
 {
   char const*	    cmd_name;                                            /* имя ( мнемомика ) команды        */
-  type_cmd_prmtr_e  cmd_type_parametr;                                   /* тип параметра команды            */     
+  type_cmd_prmtr_e  cmd_type_parametr[MAX_PARAM];                        /* тип параметра команды */     
   char const*	    cmd_descrip;                                         /* краткое описание команды         */
   char const*	    cmd_inform;                                          /* расширенное описание команды     */	
   uint16_t          (*cmd_handler_cb)( cmd_parametr_t *parametr );       /* указатель на обработчик команд   */     
 }cmd_t;
 
-/* Максимальное число возможных зарегистрированных команд */  
-#define MAX_SIZE_NUM_CMD (50)  
-/* Массив указателей на описание команд с указателями на обработчик */
-extern cmd_t* array_cmd[MAX_SIZE_NUM_CMD];  
+extern cmd_t* array_cmd[MAX_SIZE_NUM_CMD];
 
 /**
   * @brief  функция полинга терминала команд  
