@@ -17,7 +17,7 @@
 #include "cmd_process.h"
 
 // Формирование кода версии
-volatile const char __version__[] = "BOARD STM32F07VE";    
+volatile const char __version__[] = "BOARD STM32F4VE";    
 volatile const char __date__[] = __DATE__;
 volatile const char __time__[] = __TIME__;
 

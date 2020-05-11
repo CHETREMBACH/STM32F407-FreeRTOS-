@@ -31,25 +31,25 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
-#define DBG_UART_PORT                    USART6
-#define DBG_UART_CLK_ENABLE()            __HAL_RCC_USART6_CLK_ENABLE();
-#define DBG_UART_RX_GPIO_CLK_ENABLE()    __HAL_RCC_GPIOC_CLK_ENABLE()
-#define DBG_UART_TX_GPIO_CLK_ENABLE()    __HAL_RCC_GPIOC_CLK_ENABLE() 
+#define DBG_UART_PORT                    USART1
+#define DBG_UART_CLK_ENABLE()            __HAL_RCC_USART1_CLK_ENABLE();
+#define DBG_UART_RX_GPIO_CLK_ENABLE()    __HAL_RCC_GPIOA_CLK_ENABLE()
+#define DBG_UART_TX_GPIO_CLK_ENABLE()    __HAL_RCC_GPIOA_CLK_ENABLE() 
 
-#define DBG_UART_FORCE_RESET()           __HAL_RCC_USART6_FORCE_RESET()
-#define DBG_UART_RELEASE_RESET()         __HAL_RCC_USART6_RELEASE_RESET()
+#define DBG_UART_FORCE_RESET()           __HAL_RCC_USART1_FORCE_RESET()
+#define DBG_UART_RELEASE_RESET()         __HAL_RCC_USART1_RELEASE_RESET()
 
 /* Definition for DBG_UART Pins */
-#define DBG_UART_TX_PIN                 GPIO_PIN_6
-#define DBG_UART_TX_GPIO_PORT           GPIOC  
-#define DBG_UART_TX_AF                  GPIO_AF8_USART6
-#define DBG_UART_RX_PIN                 GPIO_PIN_7
-#define DBG_UART_RX_GPIO_PORT           GPIOC 
-#define DBG_UART_RX_AF                  GPIO_AF8_USART6
+#define DBG_UART_TX_PIN                 GPIO_PIN_9
+#define DBG_UART_TX_GPIO_PORT           GPIOA 
+#define DBG_UART_TX_AF                  GPIO_AF7_USART1
+#define DBG_UART_RX_PIN                 GPIO_PIN_10
+#define DBG_UART_RX_GPIO_PORT           GPIOA 
+#define DBG_UART_RX_AF                  GPIO_AF7_USART1
 
 /* Definition for DBG_UART's NVIC */
-#define DBG_UART_IRQn                   USART6_IRQn
-#define DBG_UART_IRQHandler             USART6_IRQHandler
+#define DBG_UART_IRQn                   USART1_IRQn
+#define DBG_UART_IRQHandler             USART1_IRQHandler
 
 #define DBG_BaudRate     	            921600 //1843200 //115200 // 10800000 //460800 // 230400 //38400 //
 
