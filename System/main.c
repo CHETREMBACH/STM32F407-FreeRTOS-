@@ -15,6 +15,7 @@
 #include "main.h"
 #include "printf_dbg.h"
 #include "cmd_process.h"
+#include "usb_device.h"
 
 // Формирование кода версии
 volatile const char __version__[] = "BOARD STM32F4VE";    
@@ -51,6 +52,9 @@ void system_thread(void *arg)
 	printf("   CPU FREQ = %.9lu Hz \r\n", SystemCoreClock);  
 	printf("______________________________________________\r\n"); 
   
+    /* init code for USB_DEVICE */
+    MX_USB_DEVICE_Init();
+
 	for (;;)
 	{
 		vTaskDelay(500); 
