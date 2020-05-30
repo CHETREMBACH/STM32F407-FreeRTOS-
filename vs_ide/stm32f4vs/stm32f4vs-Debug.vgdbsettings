@@ -166,7 +166,6 @@
           <string>set remotetimeout 60</string>
           <string>target remote :$$SYS:GDB_PORT$$</string>
           <string>mon halt</string>
-          <string>mon reset init</string>
           <string>load</string>
           <string>mon reset init</string>
         </StartupCommands>

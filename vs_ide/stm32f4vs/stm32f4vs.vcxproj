@@ -43,7 +43,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
       <AdditionalIncludeDirectories>../../Config;../../Libraries/CMSIS/Core/Include;../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../Libraries/CMSIS/Include;../../Libraries/FreeRTOS/Source/include;../../Libraries/FreeRTOS/Source/portable/GCC/ARM_CM4F;../../Libraries/STM32F4xx_HAL_Driver/Inc;../../Libraries/STM32F4xx_HAL_Driver/Inc/Legacy;../../System;../../Utilities\cmd_trmnl;../../Utilities\uart_dbg;../../Libraries/STM32_USB_Device_Library/Class/AUDIO/Inc;../../Libraries/STM32_USB_Device_Library/Core/Inc;../../Utilities/usbd;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>flash_layout;STM32F407xx;USE_FREERTOS;HSE_VALUE=8000000;DBG_UART_ENABLE=1;DEBUG=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>flash_layout;STM32F407xx;USE_FREERTOS;HSE_VALUE=8000000;DBG_UART_ENABLE=1;DEBUG=1;USE_USB_FS;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CLanguageStandard>C17</CLanguageStandard>
       <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
@@ -93,7 +93,6 @@
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c" />
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c" />
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c" />
-    <ClCompile Include="..\..\Libraries\STM32_USB_Device_Library\Class\AUDIO\Src\usbd_audio.c" />
     <ClCompile Include="..\..\Libraries\STM32_USB_Device_Library\Core\Src\usbd_core.c" />
     <ClCompile Include="..\..\Libraries\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c" />
     <ClCompile Include="..\..\Libraries\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c" />
@@ -103,14 +102,13 @@
     <ClCompile Include="..\..\Utilities\cmd_trmnl\cmd_process.c" />
     <ClCompile Include="..\..\Utilities\uart_dbg\printf_dbg.c" />
     <ClCompile Include="..\..\Utilities\uart_dbg\uart_dbg.c" />
-    <ClCompile Include="..\..\Utilities\usbd\usbd_audio_if.c" />
     <ClCompile Include="..\..\Utilities\usbd\usbd_conf.c" />
-    <ClCompile Include="..\..\Utilities\usbd\usbd_desc.c" />
+    <ClCompile Include="..\..\Utilities\usbd\usbd_desc_midi.c" />
+    <ClCompile Include="..\..\Utilities\usbd\usbd_midi.c" />
+    <ClCompile Include="..\..\Utilities\usbd\usbd_midi_if.c" />
     <ClCompile Include="..\..\Utilities\usbd\usb_device.c" />
     <ClInclude Include="..\..\Config\FreeRTOSConfig.h" />
     <ClInclude Include="..\..\Config\stm32f4xx_hal_conf.h" />
-    <ClInclude Include="..\..\Libraries\STM32_USB_Device_Library\Class\AUDIO\Inc\usbd_audio.h" />
-    <ClInclude Include="..\..\Libraries\STM32_USB_Device_Library\Class\AUDIO\Inc\usbd_audio_if_template.h" />
     <ClInclude Include="..\..\Libraries\STM32_USB_Device_Library\Core\Inc\usbd_conf_template.h" />
     <ClInclude Include="..\..\Libraries\STM32_USB_Device_Library\Core\Inc\usbd_core.h" />
     <ClInclude Include="..\..\Libraries\STM32_USB_Device_Library\Core\Inc\usbd_ctlreq.h" />
@@ -123,9 +121,10 @@
     <ClInclude Include="..\..\Utilities\cmd_trmnl\cmd_process.h" />
     <ClInclude Include="..\..\Utilities\uart_dbg\printf_dbg.h" />
     <ClInclude Include="..\..\Utilities\uart_dbg\uart_dbg.h" />
-    <ClInclude Include="..\..\Utilities\usbd\usbd_audio_if.h" />
     <ClInclude Include="..\..\Utilities\usbd\usbd_conf.h" />
-    <ClInclude Include="..\..\Utilities\usbd\usbd_desc.h" />
+    <ClInclude Include="..\..\Utilities\usbd\usbd_desc_midi.h" />
+    <ClInclude Include="..\..\Utilities\usbd\usbd_midi.h" />
+    <ClInclude Include="..\..\Utilities\usbd\usbd_midi_if.h" />
     <ClInclude Include="..\..\Utilities\usbd\usb_device.h" />
     <None Include="..\..\Libraries\CMSIS\LICENSE.txt" />
     <ClInclude Include="..\..\Libraries\CMSIS\Core\Include\cmsis_compiler.h" />

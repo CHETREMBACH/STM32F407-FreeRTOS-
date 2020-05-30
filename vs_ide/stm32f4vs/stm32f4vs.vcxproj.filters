@@ -100,15 +100,6 @@
     <Filter Include="stm32f4_vs\Libraries\STM32_USB_Device_Library\Class">
       <UniqueIdentifier>{883b98e4-8ada-47fa-877e-de9b0953b365}</UniqueIdentifier>
     </Filter>
-    <Filter Include="stm32f4_vs\Libraries\STM32_USB_Device_Library\Class\AUDIO">
-      <UniqueIdentifier>{d28a6aa1-e67b-41bd-aefc-8a41061d211b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="stm32f4_vs\Libraries\STM32_USB_Device_Library\Class\AUDIO\Inc">
-      <UniqueIdentifier>{bdbb94ab-a4d1-4209-96cc-c837f19c5a58}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="stm32f4_vs\Libraries\STM32_USB_Device_Library\Class\AUDIO\Src">
-      <UniqueIdentifier>{93114bda-9bef-4efa-9080-6a0dc9f5b175}</UniqueIdentifier>
-    </Filter>
     <Filter Include="stm32f4_vs\Libraries\STM32_USB_Device_Library\Core">
       <UniqueIdentifier>{ece337de-c50e-408b-99e2-4542fdda39c2}</UniqueIdentifier>
     </Filter>
@@ -650,9 +641,6 @@
     <ClCompile Include="..\..\Utilities\cmd_trmnl\cmd_process.c">
       <Filter>stm32f4_vs\Utilities\cmd_trmnl</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Libraries\STM32_USB_Device_Library\Class\AUDIO\Src\usbd_audio.c">
-      <Filter>stm32f4_vs\Libraries\STM32_USB_Device_Library\Class\AUDIO\Src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Libraries\STM32_USB_Device_Library\Core\Src\usbd_core.c">
       <Filter>stm32f4_vs\Libraries\STM32_USB_Device_Library\Core\Src</Filter>
     </ClCompile>
@@ -662,13 +650,7 @@
     <ClCompile Include="..\..\Libraries\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c">
       <Filter>stm32f4_vs\Libraries\STM32_USB_Device_Library\Core\Src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Utilities\usbd\usbd_audio_if.c">
-      <Filter>stm32f4_vs\Utilities\usbd</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Utilities\usbd\usbd_conf.c">
-      <Filter>stm32f4_vs\Utilities\usbd</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Utilities\usbd\usbd_desc.c">
       <Filter>stm32f4_vs\Utilities\usbd</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Utilities\usbd\usb_device.c">
@@ -710,6 +692,15 @@
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c">
       <Filter>stm32f4_vs\Libraries\STM32F4xx_HAL_Driver\Src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Utilities\usbd\usbd_desc_midi.c">
+      <Filter>stm32f4_vs\Utilities\usbd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Utilities\usbd\usbd_midi.c">
+      <Filter>stm32f4_vs\Utilities\usbd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Utilities\usbd\usbd_midi_if.c">
+      <Filter>stm32f4_vs\Utilities\usbd</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <LinkerScript Include="..\..\Config\STM32F407VE_flash.lds">
@@ -735,12 +726,6 @@
     <ClInclude Include="..\..\Utilities\cmd_trmnl\cmd_process.h">
       <Filter>stm32f4_vs\Utilities\cmd_trmnl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Libraries\STM32_USB_Device_Library\Class\AUDIO\Inc\usbd_audio.h">
-      <Filter>stm32f4_vs\Libraries\STM32_USB_Device_Library\Class\AUDIO\Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Libraries\STM32_USB_Device_Library\Class\AUDIO\Inc\usbd_audio_if_template.h">
-      <Filter>stm32f4_vs\Libraries\STM32_USB_Device_Library\Class\AUDIO\Inc</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Libraries\STM32_USB_Device_Library\Core\Inc\usbd_conf_template.h">
       <Filter>stm32f4_vs\Libraries\STM32_USB_Device_Library\Core\Inc</Filter>
     </ClInclude>
@@ -759,16 +744,19 @@
     <ClInclude Include="..\..\Libraries\STM32_USB_Device_Library\Core\Inc\usbd_ioreq.h">
       <Filter>stm32f4_vs\Libraries\STM32_USB_Device_Library\Core\Inc</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Utilities\usbd\usbd_audio_if.h">
-      <Filter>stm32f4_vs\Utilities\usbd</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Utilities\usbd\usbd_conf.h">
       <Filter>stm32f4_vs\Utilities\usbd</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Utilities\usbd\usbd_desc.h">
+    <ClInclude Include="..\..\Utilities\usbd\usb_device.h">
       <Filter>stm32f4_vs\Utilities\usbd</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Utilities\usbd\usb_device.h">
+    <ClInclude Include="..\..\Utilities\usbd\usbd_desc_midi.h">
+      <Filter>stm32f4_vs\Utilities\usbd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Utilities\usbd\usbd_midi.h">
+      <Filter>stm32f4_vs\Utilities\usbd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Utilities\usbd\usbd_midi_if.h">
       <Filter>stm32f4_vs\Utilities\usbd</Filter>
     </ClInclude>
   </ItemGroup>

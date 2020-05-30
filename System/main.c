@@ -16,6 +16,8 @@
 #include "printf_dbg.h"
 #include "cmd_process.h"
 #include "usb_device.h"
+#include "usbd_midi.h"
+#include "usbd_midi_if.h"
 
 // Формирование кода версии
 volatile const char __version__[] = "BOARD STM32F4VE";    
@@ -29,6 +31,46 @@ volatile const char __time__[] = __TIME__;
 /* Private variables ---------------------------------------------------------*/
 /* Definitions for defaultTask */
 /* Private function prototypes -----------------------------------------------*/
+
+
+extern USBD_HandleTypeDef *pInstance;
+/**
+ * @brief  midi_key thread
+ * @param  None
+ * @retval None
+ */
+void midi_key_thread(void *arg) {
+
+  uint8_t buf_data[60]; 
+
+    vTaskDelay(1000);
+  for (;;) {
+    //void USBD_AddNoteOn(uint8_t cable, uint8_t ch, uint8_t note, uint8_t vel)
+    //USBD_LL_Transmit(pInstance, MIDI_IN_EP, &APP_Rx_Buffer[USB_Tx_ptr],USB_Tx_length);
+
+ if (pInstance != NULL) {
+      buf_data[0] = 0x08;
+      buf_data[1] = 0x90;
+      buf_data[2] = 0x47;
+      buf_data[3] = 0x47;
+     USBD_LL_Transmit(pInstance, MIDI_IN_EP, buf_data, 4);
+     USB_Tx_State = USB_TX_CONTINUE;
+     printf(">Key On\n");
+    }
+    vTaskDelay(1000);
+
+    if (pInstance != NULL) {
+      buf_data[0] = 0x08;
+      buf_data[1] = 0x80;
+      buf_data[2] = 0x47;
+      buf_data[3] = 0x47;
+      USBD_LL_Transmit(pInstance, MIDI_IN_EP, buf_data, 4);
+      USB_Tx_State = USB_TX_CONTINUE;
+      printf(">Key Off\n");
+    }
+    vTaskDelay(1000);
+  }
+}
 
 /**
  * @brief  Start Thread 
@@ -55,10 +97,16 @@ void system_thread(void *arg)
     /* init code for USB_DEVICE */
     MX_USB_DEVICE_Init();
 
+    /* Init thread */
+    xTaskCreate(midi_key_thread, (const char *)"MidiKeyTask", configMINIMAL_STACK_SIZE * 2, NULL, TreadPrioNormal, NULL);
+
 	for (;;)
 	{
-		vTaskDelay(500); 
-		vTaskDelay(500);    
+
+      // if usb data for send is not empty (array APP_Rx_Buffer)
+      //if (USB_Tx_State == USB_TX_CONTINUE)
+      //USBD_MIDI_SendPacket(); // sends 64 bytes max in one packet
+	  vTaskDelay(100);    
 	}
 }
 
