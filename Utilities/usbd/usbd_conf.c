@@ -1,4 +1,3 @@
-/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
   * @file           : usbd_conf.c
@@ -17,7 +16,6 @@
   *
   ******************************************************************************
   */
-/* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx.h"
@@ -25,55 +23,35 @@
 #include "usbd_def.h"
 #include "usbd_core.h"
 
-/* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
-
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
-
-/* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
-/* USER CODE END PV */
 
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
 void Error_Handler(void);
 
 /* External functions --------------------------------------------------------*/
 void SystemClock_Config(void);
-
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
-/* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
 USBD_StatusTypeDef USBD_Get_USB_Status(HAL_StatusTypeDef hal_status);
 
-/* USER CODE END PFP */
+/**
+ * @brief This function handles USB On The Go FS global interrupt.
+ */
+void OTG_FS_IRQHandler(void) { HAL_PCD_IRQHandler(&hpcd_USB_OTG_FS); }
 
 /* Private functions ---------------------------------------------------------*/
-
-/* USER CODE BEGIN 1 */
-
-/* USER CODE END 1 */
-
 /*******************************************************************************
                        LL Driver Callbacks (PCD -> USB Device Library)
 *******************************************************************************/
-/* MSP Init */
 
 void HAL_PCD_MspInit(PCD_HandleTypeDef* pcdHandle)
 {
   GPIO_InitTypeDef GPIO_InitStruct;
   if(pcdHandle->Instance==USB_OTG_FS)
   {
-  /* USER CODE BEGIN USB_OTG_FS_MspInit 0 */
 
-  /* USER CODE END USB_OTG_FS_MspInit 0 */
-  
     /**USB_OTG_FS GPIO Configuration    
     PA11     ------> USB_OTG_FS_DM
     PA12     ------> USB_OTG_FS_DP 
@@ -91,21 +69,16 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef* pcdHandle)
     /* Peripheral interrupt init */
     HAL_NVIC_SetPriority(OTG_FS_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(OTG_FS_IRQn);
-  /* USER CODE BEGIN USB_OTG_FS_MspInit 1 */
 
-  /* USER CODE END USB_OTG_FS_MspInit 1 */
   }
 }
 
 void HAL_PCD_MspDeInit(PCD_HandleTypeDef* pcdHandle)
 {
   if (pcdHandle->Instance == USB_OTG_FS) {
-    /* USER CODE BEGIN USB_OTG_FS_MspDeInit 0 */
 
-    /* USER CODE END USB_OTG_FS_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_USB_OTG_FS_CLK_DISABLE();
-
     /**USB_OTG_FS GPIO Configuration
     PA11     ------> USB_OTG_FS_DM
     PA12     ------> USB_OTG_FS_DP
@@ -114,10 +87,6 @@ void HAL_PCD_MspDeInit(PCD_HandleTypeDef* pcdHandle)
 
     /* Peripheral interrupt Deinit*/
     HAL_NVIC_DisableIRQ(OTG_FS_IRQn);
-
-    /* USER CODE BEGIN USB_OTG_FS_MspDeInit 1 */
-
-    /* USER CODE END USB_OTG_FS_MspDeInit 1 */
   }
 }
 
@@ -200,13 +169,11 @@ void HAL_PCD_SuspendCallback(PCD_HandleTypeDef *hpcd) {
   USBD_LL_Suspend((USBD_HandleTypeDef *)hpcd->pData);
   __HAL_PCD_GATE_PHYCLOCK(hpcd);
   /*Enter in STOP mode */
-  /* USER CODE BEGIN 2 */
   if (hpcd->Init.low_power_enable) {
     /* Set SLEEPDEEP bit and SleepOnExit of Cortex System Control Register */
     SCB->SCR |=
         (uint32_t)((uint32_t)(SCB_SCR_SLEEPDEEP_Msk | SCB_SCR_SLEEPONEXIT_Msk));
   }
-  /* USER CODE END 2 */
 }
 
 /**
@@ -216,10 +183,9 @@ void HAL_PCD_SuspendCallback(PCD_HandleTypeDef *hpcd) {
   * @param  hpcd: PCD handle
   * @retval None
   */
-void HAL_PCD_ResumeCallback(PCD_HandleTypeDef *hpcd) {
-  /* USER CODE BEGIN 3 */
-  /* USER CODE END 3 */
-  USBD_LL_Resume((USBD_HandleTypeDef *)hpcd->pData);
+void HAL_PCD_ResumeCallback(PCD_HandleTypeDef *hpcd) 
+{
+    USBD_LL_Resume((USBD_HandleTypeDef *)hpcd->pData);
 }
 
 /**
@@ -228,7 +194,8 @@ void HAL_PCD_ResumeCallback(PCD_HandleTypeDef *hpcd) {
  * @param  epnum: Endpoint Number
  * @retval None
  */
-void HAL_PCD_ISOOUTIncompleteCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum) {
+void HAL_PCD_ISOOUTIncompleteCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum) 
+{
   USBD_LL_IsoOUTIncomplete((USBD_HandleTypeDef *)hpcd->pData, epnum);
 }
 
@@ -238,7 +205,8 @@ void HAL_PCD_ISOOUTIncompleteCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum) {
  * @param  epnum: Endpoint Number
  * @retval None
  */
-void HAL_PCD_ISOINIncompleteCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum) {
+void HAL_PCD_ISOINIncompleteCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum) 
+{
   USBD_LL_IsoINIncomplete((USBD_HandleTypeDef *)hpcd->pData, epnum);
 }
 

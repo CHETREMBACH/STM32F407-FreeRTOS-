@@ -1,4 +1,3 @@
-/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
   * @file           : usb_device.c
@@ -17,86 +16,116 @@
   *
   ******************************************************************************
   */
-/* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-
+#include "main.h"
 #include "usb_device.h"
 #include "usbd_core.h"
 #include "usbd_desc_midi.h"
 #include "usbd_midi.h"
 #include "usbd_midi_if.h"
 
-/* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
-
-/* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
-/* USER CODE END PV */
-
-/* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
-
-/* USER CODE END PFP */
-
 /* USB Device Core handle declaration. */
 USBD_HandleTypeDef hUsbDeviceFS;
 
-/*
- * -- Insert your variables declaration here --
- */
-/* USER CODE BEGIN 0 */
+/* Message Queue for Streaming to USB */
+QueueHandle_t queue_tx_midi;
 
-/* USER CODE END 0 */
+/* basic midi rx/tx functions */
+uint16_t MIDI_DataRx(uint8_t *msg, uint16_t length);
+uint16_t MIDI_DataTx(uint8_t *msg, uint16_t length);
+USBD_MIDI_ItfTypeDef USBD_Interface_fops_FS = {MIDI_DataRx, MIDI_DataTx};
 
-/*
- * -- Insert your external function declaration here --
- */
-/* USER CODE BEGIN 1 */
-
-/* USER CODE END 1 */
+/* External variables --------------------------------------------------------*/
 
 /**
   * Init USB device Library, add supported class and start the library
-  * @retval None
+  * 
   */
-void MX_USB_DEVICE_Init(void)
+void USB_device_midi_init(void) 
 {
-  /* USER CODE BEGIN USB_DEVICE_Init_PreTreatment */
-  
-  /* USER CODE END USB_DEVICE_Init_PreTreatment */
-  
-  /* Init Device Library, add supported class and start the library. */
-  if (USBD_Init(&hUsbDeviceFS, &FS_Desc, DEVICE_FS) != USBD_OK)
-  {
+  if (USBD_Init(&hUsbDeviceFS, &FS_Desc, DEVICE_FS) != USBD_OK) {
     Error_Handler();
   }
-  if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_MIDI) != USBD_OK)
-  {
+  if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_MIDI) != USBD_OK) {
     Error_Handler();
   }
-  if (USBD_MIDI_RegisterInterface(&hUsbDeviceFS, &USBD_Interface_fops_FS) != USBD_OK)
-  {
+  if (USBD_MIDI_RegisterInterface(&hUsbDeviceFS, &USBD_Interface_fops_FS) !=
+      USBD_OK) {
     Error_Handler();
   }
-  if (USBD_Start(&hUsbDeviceFS) != USBD_OK)
-  {
+  if (USBD_Start(&hUsbDeviceFS) != USBD_OK) {
     Error_Handler();
   }
-
-  /* USER CODE BEGIN USB_DEVICE_Init_PostTreatment */
-  
-  /* USER CODE END USB_DEVICE_Init_PostTreatment */
 }
 
 /**
-  * @}
-  */
+ * @brief  fill tx queue
+ * @param  uint8_t *msg  - point message
+ * @param  uint16_t length  - size message
+ * @retval None
+ */
+uint16_t MIDI_DataTx(uint8_t *msg, uint16_t length) {
+  /* Temporary buffer for midi message */
+  midi_msg msg_midi;
+
+  /* queue test */
+  if (queue_tx_midi == NULL) return USBD_FAIL;
+  
+  /* length test */
+  if (length > MAX_SIZE_DATA_MIDI_BOX) {
+    msg_midi.length = MAX_SIZE_DATA_MIDI_BOX;
+  } else {
+    msg_midi.length = length;
+  }
+
+  /* copy message */
+  for (uint8_t cntik = 0; cntik < msg_midi.length; cntik++ ) 
+  {
+    msg_midi.data[cntik] = msg[cntik];
+  }
+
+  /* message transfer to queue */
+  xQueueSend(queue_tx_midi, (void *)&msg_midi, (TickType_t)0);
+
+  return USBD_OK;
+}
 
 /**
-  * @}
-  */
+ * @brief  rx message
+ * @param  uint8_t *msg  - point message
+ * @param  uint16_t length  - size message
+ * @retval None
+ */
+uint16_t MIDI_DataRx(uint8_t *msg, uint16_t length) { return USBD_OK; }
+
+/**
+ * @brief  usb midi thread
+ * @param  None
+ * @retval None
+ */
+void usb_midi_thread(void *arg) {
+  /* Temporary buffer for streaming to USB */
+  midi_msg msg_midi;
+
+  /*  */
+  queue_tx_midi = xQueueCreate(MAX_NUM_MIDI_BOX, sizeof(midi_msg));
+  
+  if (queue_tx_midi == NULL)
+    Error_Handler();
+
+  /* Init Device Library, add supported class and start the library. */
+  USB_device_midi_init();
+
+  for (;;) {
+
+     /* Receive a message */ 
+     xQueueReceive(queue_tx_midi, &(msg_midi), portMAX_DELAY);
+     /* Transmit message */
+     USBD_MIDI_Transmit(msg_midi.data, msg_midi.length);
+  }
+}
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

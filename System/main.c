@@ -45,30 +45,23 @@ void midi_key_thread(void *arg) {
 
     vTaskDelay(1000);
   for (;;) {
-    //void USBD_AddNoteOn(uint8_t cable, uint8_t ch, uint8_t note, uint8_t vel)
-    //USBD_LL_Transmit(pInstance, MIDI_IN_EP, &APP_Rx_Buffer[USB_Tx_ptr],USB_Tx_length);
 
- if (pInstance != NULL) {
-      buf_data[0] = 0x08;
-      buf_data[1] = 0x90;
-      buf_data[2] = 0x47;
-      buf_data[3] = 0x47;
-     USBD_LL_Transmit(pInstance, MIDI_IN_EP, buf_data, 4);
-     USB_Tx_State = USB_TX_CONTINUE;
-     printf(">Key On\n");
-    }
-    vTaskDelay(1000);
+	buf_data[0] = 0x08;
+	buf_data[1] = 0x90;
+	buf_data[2] = 0x47;
+	buf_data[3] = 0x47;
+	MIDI_DataTx(buf_data,4);
+	printf(">Key On\n");
 
-    if (pInstance != NULL) {
-      buf_data[0] = 0x08;
-      buf_data[1] = 0x80;
-      buf_data[2] = 0x47;
-      buf_data[3] = 0x47;
-      USBD_LL_Transmit(pInstance, MIDI_IN_EP, buf_data, 4);
-      USB_Tx_State = USB_TX_CONTINUE;
-      printf(">Key Off\n");
-    }
-    vTaskDelay(1000);
+	vTaskDelay(1000);
+
+	buf_data[0] = 0x08;
+	buf_data[1] = 0x80;
+	buf_data[2] = 0x47;
+	buf_data[3] = 0x47;
+	MIDI_DataTx(buf_data, 4);
+	printf(">Key Off\n");
+	vTaskDelay(1000);
   }
 }
 
@@ -93,12 +86,11 @@ void system_thread(void *arg)
 	printf("   TIME: %s \r\n", __time__);
 	printf("   CPU FREQ = %.9lu Hz \r\n", SystemCoreClock);  
 	printf("______________________________________________\r\n"); 
-  
-    /* init code for USB_DEVICE */
-    MX_USB_DEVICE_Init();
 
     /* Init thread */
-    xTaskCreate(midi_key_thread, (const char *)"MidiKeyTask", configMINIMAL_STACK_SIZE * 2, NULL, TreadPrioNormal, NULL);
+    xTaskCreate(usb_midi_thread, (const char *)"midi_thread", configMINIMAL_STACK_SIZE * 2, NULL, TreadPrioNormal, NULL);
+
+    xTaskCreate(midi_key_thread, (const char *)"midi_key", configMINIMAL_STACK_SIZE * 2, NULL, TreadPrioNormal, NULL);
 
 	for (;;)
 	{
