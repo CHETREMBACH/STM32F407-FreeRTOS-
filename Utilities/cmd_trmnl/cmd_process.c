@@ -514,7 +514,6 @@ bool add_terminal_cmd(const cmd_t *p_cmp) {
 }
 
 #include "cmd_freertos_cntrl.h"
-#include "w25qx_test.h"
 
 /**
  * @brief  terminal task
@@ -530,8 +529,6 @@ void terminal_task(void *pvParameters) {
   led_cmd_init();
   /* Инициализация указателя на команду просмотра параметров Freertos        */
   freertos_cmd_init();
-  /* Инициализация указателя на команды тестирования драйвера w25qx */
-  w25qx_cmd_init();
 
   for (;;) {
     vTaskDelay(100);

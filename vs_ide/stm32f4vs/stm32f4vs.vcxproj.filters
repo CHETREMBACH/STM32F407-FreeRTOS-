@@ -166,9 +166,6 @@
     <Filter Include="stm32f4_vs\Utilities\lwip_drv">
       <UniqueIdentifier>{e0783455-8608-4e15-a6bf-57a6b50a08b4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="stm32f4_vs\Utilities\w25q128_drv">
-      <UniqueIdentifier>{e93547ff-4ce5-4a77-a4af-b3f7b3d0488a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Device-specific files">
       <UniqueIdentifier>{0d9edf2b-fd5b-4d14-9933-4047d6e8eb8d}</UniqueIdentifier>
     </Filter>
@@ -1277,26 +1274,17 @@
     <ClCompile Include="..\..\Libraries\LwIP_port_FreeRTOS\sys_arch.c">
       <Filter>stm32f4_vs\Libraries\LwIP_port_FreeRTOS</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Utilities\w25q128_drv\w25qx.c">
-      <Filter>stm32f4_vs\Utilities\w25q128_drv</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c">
       <Filter>stm32f4_vs\Libraries\STM32F4xx_HAL_Driver\Src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_spi.c">
       <Filter>stm32f4_vs\Libraries\STM32F4xx_HAL_Driver\Src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Utilities\w25q128_drv\w25qx_test.c">
-      <Filter>stm32f4_vs\Utilities\w25q128_drv</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c">
       <Filter>stm32f4_vs\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\gss</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c">
       <Filter>stm32f4_vs\Libraries\STM32F4xx_HAL_Driver\Src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Utilities\w25q128_drv\spi_w25qx_ll.c">
-      <Filter>stm32f4_vs\Utilities\w25q128_drv</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_dma.c">
       <Filter>stm32f4_vs\Libraries\STM32F4xx_HAL_Driver\Src</Filter>
@@ -1358,18 +1346,6 @@
     </ClInclude>
     <ClInclude Include="..\..\Utilities\lwip_drv\lwipopts.h">
       <Filter>stm32f4_vs\Utilities\lwip_drv</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Utilities\w25q128_drv\conf_w25qx.h">
-      <Filter>stm32f4_vs\Utilities\w25q128_drv</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Utilities\w25q128_drv\w25qx.h">
-      <Filter>stm32f4_vs\Utilities\w25q128_drv</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Utilities\w25q128_drv\w25qx_test.h">
-      <Filter>stm32f4_vs\Utilities\w25q128_drv</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Utilities\w25q128_drv\spi_w25qx_ll.h">
-      <Filter>stm32f4_vs\Utilities\w25q128_drv</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

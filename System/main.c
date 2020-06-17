@@ -17,10 +17,6 @@
 #include "printf_dbg.h"
 #include "cmd_process.h"
 
-#include "w25qx.h"
-#include "conf_w25qx.h"
-#include "spi_w25qx_ll.h" 
-
 
 // Формирование кода версии
 volatile const char __version__[] = "BOARD STM32F07VE";    
@@ -53,7 +49,7 @@ void system_thread(void *arg)
 
 	/* init code for LWIP */
 	LWIP_Init();	
-	
+		
 	//Инициализация задачи диагностического терминала 
 	xTaskCreate(terminal_task, (const char*)"CmdTrmnl", configMINIMAL_STACK_SIZE * 5, NULL, TreadPrioNormal, NULL);
 	
@@ -84,7 +80,6 @@ void system_thread(void *arg)
 	printf("   CPU FREQ = %.9lu Hz \r\n", SystemCoreClock);  
 	printf("______________________________________________\r\n"); 
   
-    W25qxx_Init();
 	
     for (;;) {
       vTaskDelay(500);

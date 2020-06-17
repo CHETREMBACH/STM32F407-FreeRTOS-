@@ -14,7 +14,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{5B333A66-063A-4119-9018-ABFC6F1AFCC3}</ProjectGuid>
     <BSP_ID>com.sysprogs.arm.stm32</BSP_ID>
-    <BSP_VERSION>2020.01</BSP_VERSION>
+    <BSP_VERSION>2020.06</BSP_VERSION>
     <InPlaceBSPSubdir />
     <RelativeBSPPath />
   </PropertyGroup>
@@ -33,16 +33,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <GNUConfigurationType>Debug</GNUConfigurationType>
-    <ToolchainID>com.sysprogs.gnuarm.arm-eabi</ToolchainID>
-    <ToolchainVersion>9.2.1/8.0/r1</ToolchainVersion>
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>9.3.1/8.3.1/r1</ToolchainVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
-    <ToolchainID>com.sysprogs.gnuarm.arm-eabi</ToolchainID>
-    <ToolchainVersion>9.2.1/8.0/r1</ToolchainVersion>
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>9.3.1/8.3.1/r1</ToolchainVersion>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../../Config;../../Libraries/CMSIS/Core/Include;../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../Libraries/CMSIS/Include;../../Libraries/FreeRTOS/Source/include;../../Libraries/FreeRTOS/Source/portable/GCC/ARM_CM4F;../../Libraries/STM32F4xx_HAL_Driver/Inc;../../Libraries/STM32F4xx_HAL_Driver/Inc/Legacy;../../System;../../Utilities\cmd_trmnl;../../Utilities\uart_dbg;../../Utilities\w25q128_drv;../../Libraries/LwIP_port_FreeRTOS/include;../../Libraries/LwIP/src/include;../../Utilities/lwip_drv;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../Config;../../Libraries/CMSIS/Core/Include;../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../Libraries/CMSIS/Include;../../Libraries/FreeRTOS/Source/include;../../Libraries/FreeRTOS/Source/portable/GCC/ARM_CM4F;../../Libraries/STM32F4xx_HAL_Driver/Inc;../../Libraries/FatFs\source;../../Libraries/STM32F4xx_HAL_Driver/Inc/Legacy;../../System;../../Utilities\cmd_trmnl;../../Utilities\uart_dbg;../../Libraries/LwIP_port_FreeRTOS/include;../../Libraries/LwIP/src/include;../../Utilities/lwip_drv;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>flash_layout;STM32F407xx;HSE_VALUE=8000000;USE_FREERTOS;DBG_UART_ENABLE=1;DEBUG=1;USE_FULL_LL_DRIVER;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CLanguageStandard>C11</CLanguageStandard>
@@ -96,9 +96,6 @@
     <ClCompile Include="..\..\Utilities\lwip_drv\lwip.c" />
     <ClCompile Include="..\..\Utilities\uart_dbg\printf_dbg.c" />
     <ClCompile Include="..\..\Utilities\uart_dbg\uart_dbg.c" />
-    <ClCompile Include="..\..\Utilities\w25q128_drv\spi_w25qx_ll.c" />
-    <ClCompile Include="..\..\Utilities\w25q128_drv\w25qx.c" />
-    <ClCompile Include="..\..\Utilities\w25q128_drv\w25qx_test.c" />
     <ClInclude Include="..\..\Config\FreeRTOSConfig.h" />
     <ClInclude Include="..\..\Config\stm32f4xx_hal_conf.h" />
     <ClInclude Include="..\..\Libraries\LwIP_port_FreeRTOS\include\arch\bpstruct.h" />
@@ -118,10 +115,6 @@
     <ClInclude Include="..\..\Utilities\lwip_drv\lwipopts.h" />
     <ClInclude Include="..\..\Utilities\uart_dbg\printf_dbg.h" />
     <ClInclude Include="..\..\Utilities\uart_dbg\uart_dbg.h" />
-    <ClInclude Include="..\..\Utilities\w25q128_drv\conf_w25qx.h" />
-    <ClInclude Include="..\..\Utilities\w25q128_drv\spi_w25qx_ll.h" />
-    <ClInclude Include="..\..\Utilities\w25q128_drv\w25qx.h" />
-    <ClInclude Include="..\..\Utilities\w25q128_drv\w25qx_test.h" />
     <None Include="..\..\Libraries\CMSIS\LICENSE.txt" />
     <ClInclude Include="..\..\Libraries\CMSIS\Core\Include\cmsis_compiler.h" />
     <ClInclude Include="..\..\Libraries\CMSIS\Core\Include\cmsis_gcc.h" />
