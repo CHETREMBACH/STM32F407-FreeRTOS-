@@ -169,6 +169,12 @@
     <Filter Include="Device-specific files">
       <UniqueIdentifier>{0d9edf2b-fd5b-4d14-9933-4047d6e8eb8d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="stm32f4_vs\Utilities\driver_i2c">
+      <UniqueIdentifier>{9ed4524a-e257-4852-a02f-3dc72e19c2bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32f4_vs\Utilities\TPS23861">
+      <UniqueIdentifier>{e788f6a1-5627-4f4f-b79d-187fad50b648}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="stm32f4vs-Debug.vgdbsettings">
@@ -1289,6 +1295,30 @@
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_dma.c">
       <Filter>stm32f4_vs\Libraries\STM32F4xx_HAL_Driver\Src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Utilities\driver_i2c\driver_i2c.c">
+      <Filter>stm32f4_vs\Utilities\driver_i2c</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Utilities\TPS23861\poe_cntrl.c">
+      <Filter>stm32f4_vs\Utilities\TPS23861</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Utilities\TPS23861\poe_cntrl_auto.c">
+      <Filter>stm32f4_vs\Utilities\TPS23861</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Utilities\TPS23861\poe_driver.c">
+      <Filter>stm32f4_vs\Utilities\TPS23861</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Utilities\TPS23861\power_manage.c">
+      <Filter>stm32f4_vs\Utilities\TPS23861</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Utilities\TPS23861\TPS23861.c">
+      <Filter>stm32f4_vs\Utilities\TPS23861</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c">
+      <Filter>stm32f4_vs\Libraries\STM32F4xx_HAL_Driver\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c">
+      <Filter>stm32f4_vs\Libraries\STM32F4xx_HAL_Driver\Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <LinkerScript Include="..\..\Config\STM32F407VE_flash.lds">
@@ -1346,6 +1376,24 @@
     </ClInclude>
     <ClInclude Include="..\..\Utilities\lwip_drv\lwipopts.h">
       <Filter>stm32f4_vs\Utilities\lwip_drv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Utilities\driver_i2c\driver_i2c.h">
+      <Filter>stm32f4_vs\Utilities\driver_i2c</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Utilities\TPS23861\poe_cntrl.h">
+      <Filter>stm32f4_vs\Utilities\TPS23861</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Utilities\TPS23861\poe_cntrl_auto.h">
+      <Filter>stm32f4_vs\Utilities\TPS23861</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Utilities\TPS23861\poe_driver.h">
+      <Filter>stm32f4_vs\Utilities\TPS23861</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Utilities\TPS23861\power_manage.h">
+      <Filter>stm32f4_vs\Utilities\TPS23861</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Utilities\TPS23861\TPS23861.h">
+      <Filter>stm32f4_vs\Utilities\TPS23861</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

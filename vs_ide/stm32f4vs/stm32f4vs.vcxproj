@@ -42,8 +42,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../../Config;../../Libraries/CMSIS/Core/Include;../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../Libraries/CMSIS/Include;../../Libraries/FreeRTOS/Source/include;../../Libraries/FreeRTOS/Source/portable/GCC/ARM_CM4F;../../Libraries/STM32F4xx_HAL_Driver/Inc;../../Libraries/FatFs\source;../../Libraries/STM32F4xx_HAL_Driver/Inc/Legacy;../../System;../../Utilities\cmd_trmnl;../../Utilities\uart_dbg;../../Libraries/LwIP_port_FreeRTOS/include;../../Libraries/LwIP/src/include;../../Utilities/lwip_drv;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>flash_layout;STM32F407xx;HSE_VALUE=8000000;USE_FREERTOS;DBG_UART_ENABLE=1;DEBUG=1;USE_FULL_LL_DRIVER;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../Config;../../Libraries/CMSIS/Core/Include;../../Libraries/CMSIS/Device/ST/STM32F4xx/Include;../../Libraries/CMSIS/Include;../../Libraries/FreeRTOS/Source/include;../../Libraries/FreeRTOS/Source/portable/GCC/ARM_CM4F;../../Libraries/STM32F4xx_HAL_Driver/Inc;../../Libraries/FatFs\source;../../Libraries/STM32F4xx_HAL_Driver/Inc/Legacy;../../System;../../Utilities\cmd_trmnl;../../Utilities\uart_dbg;../../Libraries/LwIP_port_FreeRTOS/include;../../Utilities/driver_i2c;../../Libraries/LwIP/src/include;../../Utilities/TPS23861;../../Utilities/lwip_drv;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>flash_layout;STM32F407xx;HSE_VALUE=8000000;USE_FREERTOS;DBG_UART_ENABLE=1;DEBUG=1;USE_FULL_LL_DRIVER;NUM_OF_TPS23861=1;PM_NUM_OF_PORT=4;PM_EN=1;PRINT_STATUS=1;DETAILED_STATUS=1;MODE_CNTL=2;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CLanguageStandard>C11</CLanguageStandard>
       <CPPLanguageStandard>CPP14</CPPLanguageStandard>
@@ -85,6 +85,8 @@
     <ClCompile Include="..\..\Libraries\LwIP_port_FreeRTOS\sys_arch.c" />
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c" />
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_eth.c" />
+    <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c" />
+    <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c" />
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c" />
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_dma.c" />
     <ClCompile Include="..\..\Libraries\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_spi.c" />
@@ -92,8 +94,14 @@
     <ClCompile Include="..\..\Utilities\cmd_trmnl\cmd_hdl.c" />
     <ClCompile Include="..\..\Utilities\cmd_trmnl\cmd_hlp.c" />
     <ClCompile Include="..\..\Utilities\cmd_trmnl\cmd_process.c" />
+    <ClCompile Include="..\..\Utilities\driver_i2c\driver_i2c.c" />
     <ClCompile Include="..\..\Utilities\lwip_drv\ethernetif.c" />
     <ClCompile Include="..\..\Utilities\lwip_drv\lwip.c" />
+    <ClCompile Include="..\..\Utilities\TPS23861\poe_cntrl.c" />
+    <ClCompile Include="..\..\Utilities\TPS23861\poe_cntrl_auto.c" />
+    <ClCompile Include="..\..\Utilities\TPS23861\poe_driver.c" />
+    <ClCompile Include="..\..\Utilities\TPS23861\power_manage.c" />
+    <ClCompile Include="..\..\Utilities\TPS23861\TPS23861.c" />
     <ClCompile Include="..\..\Utilities\uart_dbg\printf_dbg.c" />
     <ClCompile Include="..\..\Utilities\uart_dbg\uart_dbg.c" />
     <ClInclude Include="..\..\Config\FreeRTOSConfig.h" />
@@ -110,9 +118,15 @@
     <ClInclude Include="..\..\Utilities\cmd_trmnl\cmd_hdl.h" />
     <ClInclude Include="..\..\Utilities\cmd_trmnl\cmd_hlp.h" />
     <ClInclude Include="..\..\Utilities\cmd_trmnl\cmd_process.h" />
+    <ClInclude Include="..\..\Utilities\driver_i2c\driver_i2c.h" />
     <ClInclude Include="..\..\Utilities\lwip_drv\ethernetif.h" />
     <ClInclude Include="..\..\Utilities\lwip_drv\lwip.h" />
     <ClInclude Include="..\..\Utilities\lwip_drv\lwipopts.h" />
+    <ClInclude Include="..\..\Utilities\TPS23861\poe_cntrl.h" />
+    <ClInclude Include="..\..\Utilities\TPS23861\poe_cntrl_auto.h" />
+    <ClInclude Include="..\..\Utilities\TPS23861\poe_driver.h" />
+    <ClInclude Include="..\..\Utilities\TPS23861\power_manage.h" />
+    <ClInclude Include="..\..\Utilities\TPS23861\TPS23861.h" />
     <ClInclude Include="..\..\Utilities\uart_dbg\printf_dbg.h" />
     <ClInclude Include="..\..\Utilities\uart_dbg\uart_dbg.h" />
     <None Include="..\..\Libraries\CMSIS\LICENSE.txt" />

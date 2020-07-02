@@ -16,7 +16,7 @@
 #include "lwip.h"
 #include "printf_dbg.h"
 #include "cmd_process.h"
-
+#include "poe_driver.h"
 
 // Формирование кода версии
 volatile const char __version__[] = "BOARD STM32F07VE";    
@@ -70,7 +70,10 @@ void system_thread(void *arg)
      //Инициализация циклического счетчика 
      init_cyc_tick();
 
-
+	/*  Функция настройки интерфейса poe контроль.*/
+	Init_POE_Config();
+	
+	
 	// Информационная шапка программы
 	printf("______________________________________________\r\n");
 	printf("\r\n");
