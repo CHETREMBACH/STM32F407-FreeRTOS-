@@ -33,11 +33,10 @@ uint8_t __attribute__((section(".RTOS_HEAP_CCMRAM"))) ucHeap[configTOTAL_HEAP_SI
 /**
   * @brief  Функция вызывается при переполнении стека FreeRTOS, 
   * @param  TaskHandle_t xTask - хэндл задачи
-  * @param  signed portCHAR *pcTaskName  - имя текущей задачи
+  * @param  char * pcTaskName  - имя текущей задачи
   * @retval None
   */
-void vApplicationStackOverflowHook(TaskHandle_t xTask,
-                                   signed portCHAR *pcTaskName)
+void vApplicationStackOverflowHook( TaskHandle_t xTask,	char * pcTaskName)
 {
 	stackOverflow++;
 	printf("StackOverflowHook: %s\n", pcTaskName);

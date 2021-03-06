@@ -218,7 +218,7 @@ const cmd_t freertos_cmd =
   /* имя ( мнемомика ) команды        */   
   "freertos",
   /* тип параметра команды            */
-  VR_STRING,
+    VR_STRING, VR_NONE, VR_NONE, VR_NONE, VR_NONE,
   /* краткое описание команды         */
   "FreeRTOS view control command",
   /* расширенное описание команды     */ 
